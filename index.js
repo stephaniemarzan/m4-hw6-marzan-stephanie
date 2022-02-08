@@ -21,8 +21,7 @@ function getPizzaOrder() {
   // HINT: prompt() returns a string
   // HINT: You may wish to use .toLowerCase() and .trim()
 
-  pizza.crust = crust.toLowerCase()
-  pizza.crust= crust.trim()
+  pizza.crust = crust.toLowerCase().trim()
 
   // if the user specified 'thick' crust, add thickCrustUpcharge
   // to pizza.cost
@@ -32,8 +31,6 @@ function getPizzaOrder() {
     pizza.cost += thickCrustUpcharge
   }
 
-
-
   var toppings = prompt("Please enter additional toppings (comma separated)")
   // HINT: prompt() will return an empty string "" if the user presses 'OK' without entering a value
   // if the user enters toppings, use .split(",") to separate toppings into an array
@@ -42,11 +39,31 @@ function getPizzaOrder() {
   // the number of toppings added to pizza.cost
   // YOUR CODE HERE
 
+  /* !!!!!!! MORE STEPS NEEDED HERE !!!!!!
+  //pizza.toppings = toppings.trim().split(',')
+
+  if (pizza.toppings.length >=1){
+    pizza.toppings.length *= toppingsFee += pizza.cost;
+  }
+  else{
+    pizza.toppings = [];
+  }*/
+
+  
+
+
+
   var extraCheese = confirm("Would you like extra cheese?")
   // HINT: confirm() returns a boolean
   // if the user specifies extra cheese, set pizza.extraCheese to true or false
   // if the user specifies extra cheese, add extraCheeseUpcharge to pizza.cost
   // YOUR CODE HERE
+
+  pizza.extraCheese = extraCheese;
+
+  if (pizza.extraCheese === true){
+    pizza.cost += extraCheeseUpcharge
+  }
 
   var isDelivery = confirm("Is your order for Delivery?")
   // HINT: confirm() returns a boolean
@@ -54,6 +71,16 @@ function getPizzaOrder() {
   // if order is NOT for delivery, set pizza.saleType to "take-out"
   // if order if for delivery, add deliveryFee to pizza.cost
   // YOUR CODE HERE
+
+  pizza.saleType = isDelivery
+
+  if(pizza.saleType === true){
+    pizza.saleType = 'delivery'
+    pizza.cost += deliveryFee;
+  }
+  else{
+    pizza.saleType === 'take-out';
+  }
 
   return pizza
 }
