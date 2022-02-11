@@ -39,19 +39,12 @@ function getPizzaOrder() {
   // the number of toppings added to pizza.cost
   // YOUR CODE HERE
 
-  /* !!!!!!! MORE STEPS NEEDED HERE !!!!!!
-  //pizza.toppings = toppings.trim().split(',')
-
-  if (pizza.toppings.length >=1){
-    pizza.toppings.length *= toppingsFee += pizza.cost;
-  }
-  else{
+  if (toppings) {
+    pizza.toppings = toppings.trim().split(',')
+    pizza.cost += pizza.toppings.length * toppingsFee
+  } else {
     pizza.toppings = [];
-  }*/
-
-  
-
-
+  }
 
   var extraCheese = confirm("Would you like extra cheese?")
   // HINT: confirm() returns a boolean
